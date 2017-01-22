@@ -8,6 +8,11 @@ let state = {
   ],
 }
 
+function toggleState() {
+  console.log('hello');
+  //console.log(selectedItem[this].complete);
+}
+
 function addTodo(){
   let item = state["todos"];
   for(var key in item){
@@ -16,8 +21,13 @@ function addTodo(){
       newLi.className = "todo--complete";
     }
     let todotitle = item[key].title;
-    let newTodo = document.createTextNode(`Hi! ${todotitle}`);
-    newLi.appendChild(newTodo);
+    let todoLink = document.createElement('a');
+    todoLink.setAttribute('href', '#');
+    todoLink.setAttribute('onclick','toggleState()');
+    let newTodo = document.createTextNode(`${todotitle}`);
+    //newLi.appendChild(newTodo);
+    todoLink.appendChild(newTodo);
+    newLi.appendChild(todoLink)
     let todoList = document.getElementById('todos');
     todoList.appendChild(newLi);
   }
