@@ -2,6 +2,9 @@
 <html ng-app="todoApp">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      li.todo--complete { text-decoration: line-through;  }
+    </style>
 
     <title>Todo App</title>
   </head>
@@ -9,9 +12,6 @@
     <h1>Welcome!</h1>
 
     <ul id="todos">
-      <li>First todo</li>
-      <li class="todo--complete">Second todo</li>
-      <li>Third todo</li>
     </ul>
 
     <script src="/static/bundle.js"></script>
